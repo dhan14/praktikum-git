@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f 
+RewriteRule ^(.*)$ $1.php 
+RewriteRule ^detail_pesan?$ v2/api/detail_pesan.php
+RewriteRule ^detail_pesan/([0-9]+) v2/api/detail_pesan.php?id_detail_pesan=$1
+RewriteRule ^buku?$ v2/api/buku.php
+RewriteRule ^buku/([0-9]+) buku.php?id_buku=$1
+RewriteRule ^peminjaman?$ v2/api/peminjaman.php
+RewriteRule ^peminjaman/([0-9]+) peminjaman.php?id_pinjam=$1
+RewriteRule ^pengembalian?$ v2/api/pengembalian.php
+RewriteRule ^pengembalian/([0-9]+) pengembalian.php?id_pengambilan=$1
+RewriteRule ^petugas?$ v2/api/petugas
+</IfModule>
